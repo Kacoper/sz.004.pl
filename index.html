@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <head>
+        <title> punkt do szkoły średniej </title>
+    </head>
+
+
+    <body background="https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg"> 
+    
+    
+        <center>
+            <h1>
+                <span style="color: yellow">Oblicz punkty do szkoł średniej</span>
+            <h1>
+        
+            <div>
+                <form name = "formcalc"> 
+                    <span style="color: yellow">procent z egzaminu z języka polskiego:</span><input type = "text1" name = "calc1">
+                    <br>      
+                    <span style="color: yellow">procent z egzaminu z matematyki:</span><input type = "text2" name = "calc2">
+                    <br>
+                    <span style="color: yellow">procent z egzaminu z języka obcego:</span><input type = "text3" name = "calc3">
+                    <br>
+                    <span style="color: yellow">punkty:</span> 
+                    <br>
+                    <span style="color: yellow">J. Polski:</span> <input type="text1" name="txtres1">
+
+                    <span style="color: yellow">Matematyka:</span> <input type="text2" name="txtres2">
+
+                    <span style="color: yellow">J. Obcy:</span> <input type="text3" name="txtres3">
+                    
+                    <input style="color:red" type="button" value = "Oblicz" onClick="dodaj()">
+                    <br>
+                    <span style="color: yellow">Łącznie:</span> <input type="text4" name="txtres4">
+                </form>
+         
+        
+                <script type="text/javascript">
+                    function dodaj()
+                    {
+                        var num1, num2, num3, locz;
+                        num1=Number(document.formcalc.calc1.value);
+                        num2=Number(document.formcalc.calc2.value);
+                        num3=Number(document.formcalc.calc3.value);
+                        res1=num1*0.35;
+                        res2=num2*0.35;
+                        res3=num3*0.35;
+                        locz=res1+res2+res3;
+                        document.formcalc.txtres1.value=res1;
+                        document.formcalc.txtres2.value=res2;
+                        document.formcalc.txtres3.value=res3;
+                        document.formcalc.txtres4.value=locz;
+
+                    }
+    
+                </script>
+
+            </div>
+            
+            
+          
+         
+        
+
+        
+
+    </body>    
+        
+
+    
+    
+    
+    
+    
