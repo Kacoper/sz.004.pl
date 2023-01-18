@@ -12,49 +12,127 @@
                 <span style="color: yellow">Oblicz punkty do szkoł średniej</span>
             <h1>
         
-            <div>
+            
                 <form name = "formcalc"> 
-                    <span style="color: yellow">procent z egzaminu z języka polskiego:</span><input type = "text1" name = "calc1">
+                    <span style="color: yellow">procent z egzaminu z języka polskiego:</span><input type = "text" name = "calc1">
                     <br>      
-                    <span style="color: yellow">procent z egzaminu z matematyki:</span><input type = "text2" name = "calc2">
+                    <span style="color: yellow">procent z egzaminu z matematyki:</span><input type = "text" name = "calc2">
                     <br>
-                    <span style="color: yellow">procent z egzaminu z języka obcego:</span><input type = "text3" name = "calc3">
+                    <span style="color: yellow">procent z egzaminu z języka obcego:</span><input type = "text" name = "calc3">
                     <br>
+                    <span style="color: yellow">Ocena J. polskiego:</span><input type = "text" name = "calc4">
+                    <br>      
+                    <span style="color: yellow">Ocena z matematyki:</span><input type = "text" name = "calc5">
+                    <br>
+                    <span style="color: yellow">Ocena z języka obcego:</span><input type = "text" name = "calc6">
+                    <br>
+                
+            
                     <span style="color: yellow">punkty:</span> 
                     <br>
-                    <span style="color: yellow">J. Polski:</span> <input type="text1" name="txtres1">
+                    <span style="color: yellow">J. Polski:</span> <input type="text" name="txtres1">
 
-                    <span style="color: yellow">Matematyka:</span> <input type="text2" name="txtres2">
+                    <span style="color: yellow">Matematyka:</span> <input type="text" name="txtres2">
 
-                    <span style="color: yellow">J. Obcy:</span> <input type="text3" name="txtres3">
-                    
+                    <span style="color: yellow">J. Obcy:</span> <input type="text" name="txtres3">
+            
                     <input style="color:red" type="button" value = "Oblicz" onClick="dodaj()">
                     <br>
-                    <span style="color: yellow">Łącznie:</span> <input type="text4" name="txtres4">
+                    <span style="color: yellow">Łącznie:</span> <input type="text" name="txtres4">
                 </form>
-         
-        
-                <script type="text/javascript">
-                    function dodaj()
-                    {
-                        var num1, num2, num3, locz;
-                        num1=Number(document.formcalc.calc1.value);
-                        num2=Number(document.formcalc.calc2.value);
-                        num3=Number(document.formcalc.calc3.value);
+            <script type="text/javascript">
+                function dodaj()
+                {
+                    var num1, num2, num3, num4, num5, num6, locz;
+                    
+                    num1=Number(document.formcalc.calc1.value);
+                    num2=Number(document.formcalc.calc2.value);
+                    num3=Number(document.formcalc.calc3.value);
+                    num4=Number(document.formcalc.calc4.value);
+                    num5=Number(document.formcalc.calc5.value);
+                    num6=Number(document.formcalc.calc6.value);
+
+                    if (num1<=100){
                         res1=num1*0.35;
-                        res2=num2*0.35;
-                        res3=num3*0.35;
-                        locz=res1+res2+res3;
-                        document.formcalc.txtres1.value=res1;
-                        document.formcalc.txtres2.value=res2;
-                        document.formcalc.txtres3.value=res3;
-                        document.formcalc.txtres4.value=locz;
-
                     }
-    
-                </script>
+                    else{
+                        res1=0
+                    }
+                    
+                    if (num2<=100){
+                        res2=num2*0.35;
+                    }
+                    else{
+                        res2=0
+                    }
+                   
+                    if (num3<=100){
+                        res3=num3*0.35;
+                    }
+                    else{
+                        res3=0
+                    }
+                    
+                    if (num4==1){
+                        res4=2;
+                    }else if(num4==2){
+                        res4=2;
+                    }else if(num4==3){
+                        res4=8;
+                    }else if(num4==4){
+                        res4=14;
+                    }else if(num4==5){
+                        res4=17;
+                    }else if(num4==6){
+                        res4=18;
+                    }
 
-            </div>
+                    if (num5==1){
+                        res5=0;
+                    }else if(num5==2){
+                        res5=2;
+                    }else if(num5==3){
+                        res5=8;
+                    }else if(num5==4){
+                        res5=14;
+                    }else if(num5==5){
+                        res5=17;
+                    }else if(num5==6){
+                        res5=18;
+                    }
+                        
+                    if (num6==1){
+                        res6=0;
+                    }else if(num6==2){
+                        res6=2;
+                    }else if(num6==3){
+                        res6=8;
+                    }else if(num6==4){
+                        res6=14;
+                    }else if(num6==5){
+                        res6=17;
+                    }else if(num6==6){
+                        res6=18;
+                    }
+
+                    
+                    
+                    
+                
+                    
+                    
+                    
+
+                    locz=res1+res2+res3+res4+res5+res6;
+                    document.formcalc.txtres1.value=res1+res4;
+                    document.formcalc.txtres2.value=res2+res5;
+                    document.formcalc.txtres3.value=res3+res6;
+                    document.formcalc.txtres4.value=locz;
+                    
+
+                }
+            </script>
+            
             
             
           
@@ -63,7 +141,7 @@
 
         
 
-    </body>    
+    </body>   
         
 
     
